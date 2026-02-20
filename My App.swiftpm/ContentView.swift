@@ -9,11 +9,11 @@ struct ContentView: View {
             Text("Foods").fontWeight(.bold)
             Spacer(minLength: 20)
             Table(foods) {
-                TableColumn("Name", value: \.name)
+                TableColumn("Name", value: \.description)
                 TableColumn("Nutrients") { food in
                     GroupBox {
                         ForEach(food.nutrients) { nutrient in
-                            Text(nutrient.name + ", " + nutrient.value + nutrient.unit)
+                            Text(nutrient.name + ", " + nutrient.amount.description + nutrient.unitName)
                         }  
                     }
                 }    
@@ -21,7 +21,7 @@ struct ContentView: View {
             .tableColumnHeaders(.visible)
             .environment(\.defaultMinListRowHeight, 80) // Set your desired minimum height
         }.onAppear {
-            if let newData: [FoodItem] = loadJson(filename: "Foods") {
+            if let newData: [FoodItem] = loadJson(filename: "USDAFoods") {
                 foods = newData
             }
         }

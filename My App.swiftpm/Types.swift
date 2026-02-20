@@ -1,9 +1,10 @@
+import SwiftUI
 import Foundation
 
 struct FoodNutrient : Identifiable, Codable {
     let id: UUID = UUID()
     let name: String
-    let amount: String
+    let amount: Float
     let unitName: String
     
     private enum CodingKeys: String, CodingKey {
@@ -19,7 +20,7 @@ struct FoodItem : Identifiable, Codable {
     let nutrients: [FoodNutrient]
     
     private enum CodingKeys: String, CodingKey {
-        case name
+        case description
         case nutrients
     }
 }

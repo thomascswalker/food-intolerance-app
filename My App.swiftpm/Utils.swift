@@ -1,3 +1,5 @@
+import Foundation
+import SwiftUI
 
 func loadJson<T: Codable>(filename fileName: String) -> T? {
     guard let url = Bundle.main.url(forResource: fileName, withExtension: "json") else {
