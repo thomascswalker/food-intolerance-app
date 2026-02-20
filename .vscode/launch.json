@@ -1,0 +1,15 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "swift",
+            "request": "launch",
+            "name": "Launch Program",
+            "program": "C:\\Swift\\bin\\swift.exe",
+            "args": [
+                "FoodIntolerance\\FoodIntoleranceApp.swift"
+            ],
+            "cwd": "${workspaceRoot}"
+        }
+    ]
+}
