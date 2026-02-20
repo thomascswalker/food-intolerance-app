@@ -1,0 +1,22 @@
+[
+    {
+        "name": "apple",
+        "nutrients": [
+            {
+                "name": "sucrose",
+                "value": "1.0",
+                "unit": "g"
+            }
+        ]
+    },
+    {
+        "name": "pear",
+        "nutrients": [
+            {
+                "name": "sucrose",
+                "value":  "1.0",
+                "unit": "g"
+            }
+        ]
+    }
+]
