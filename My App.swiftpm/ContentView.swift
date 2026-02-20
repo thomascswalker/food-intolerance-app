@@ -55,12 +55,15 @@ struct ContentView: View {
             Table(foods) {
                 TableColumn("Name", value: \.name)
                 TableColumn("Nutrients") { food in
-                    List(food.nutrients) { nutrient in
-                        Text(nutrient.name + ", " + nutrient.value + nutrient.unit)
-                    }  
-                }
+                    GroupBox {
+                        ForEach(food.nutrients) { nutrient in
+                            Text(nutrient.name + ", " + nutrient.value + nutrient.unit)
+                        }  
+                    }
+                }    
             }
             .tableColumnHeaders(.visible)
+            .environment(\.defaultMinListRowHeight, 80) // Set your desired minimum height
         }.onAppear {
             if let newData: [FoodItem] = loadJson(filename: "Foods") {
                 foods = newData
